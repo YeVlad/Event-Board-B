@@ -14,6 +14,7 @@ export const createParticipantController = async (req, res) => {
 };
 
 export const getParticipantController = async (req, res) => {
-  const data = await getAllParticipants(req.body);
+  const { eventId } = req.params;
+  const data = await getAllParticipants(eventId);
   res.json({ status: 200, message: 'Successfully found !', data });
 };

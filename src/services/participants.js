@@ -21,5 +21,5 @@ export const createParticipant = async (payload) => {
 };
 
 export async function getAllParticipants(eventId) {
-  return await Participants.find(eventId);
+  return await Participants.find({ eventId });
 }

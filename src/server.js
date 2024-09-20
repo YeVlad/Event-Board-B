@@ -36,7 +36,7 @@ export function setupServer() {
 
   app.get('/events', ctrlWrapper(getContactController));
 
-  app.get('/participant', ctrlWrapper(getParticipantController));
+  app.get('/participant/:eventId', ctrlWrapper(getParticipantController));
 
   app.put('/participant', ctrlWrapper(createParticipantController));
 
