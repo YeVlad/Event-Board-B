@@ -37,7 +37,7 @@ export function setupServer() {
     }),
   );
 
-  app.get('/events', ctrlWrapper(getEventsController));
+  // app.get('/events', ctrlWrapper(getEventsController));
 
   app.get('/events/:somePage', ctrlWrapper(getSomeEventsController));
 
