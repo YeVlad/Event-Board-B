@@ -1,8 +1,10 @@
 import express from 'express';
 import pino from 'pino-http';
+import cors from 'cors';
 
 import dotenv from 'dotenv';
 import { getAllEvents } from './services/events.js';
+import { corsConfigs } from './config/corsConfigs.js';
 
 dotenv.config();
 const PORT = Number(process.env.PORT);
@@ -10,6 +12,8 @@ const PORT = Number(process.env.PORT);
 const app = express();
 
 export function setupServer() {
+  app.use(cors(corsConfigs));
+
   app.use(
     pino({
       transport: {
