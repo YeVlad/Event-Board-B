@@ -20,7 +20,6 @@ export const createParticipant = async (payload) => {
   return participant;
 };
 
-// export const createParticipant = async (payload) => {
-//   const participant = await Participants.create(payload);
-//   return participant;
-// };
+export async function getAllParticipants(eventId) {
+  return await Participants.find(eventId);
+}
