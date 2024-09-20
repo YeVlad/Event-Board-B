@@ -1,0 +1,26 @@
+[
+  {
+    "_id": { "$oid": "65ca67e7ae7f10c88b598375" },
+    "title": "Tomato event",
+    "description": "Only tomato"
+  },
+  {
+    "_id": { "$oid": "65ca67e7ae7f10c88b598376" },
+    "title": "Chess event",
+    "description": "For clever people"
+  },
+  {
+    "_id": { "$oid": "65ca67e7ae7f10c88b598377" },
+    "title": "Dence event",
+    "description": "Strong body - strong soul"
+  },
+  {
+    "title": "Gaming event",
+    "description": "GGWP"
+  },
+  {
+    "_id": { "$oid": "65ca67e7ae7f10c88b598378" },
+    "title": "IT event",
+    "description": "Future is here"
+  }
+]

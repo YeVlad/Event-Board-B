@@ -1,37 +1,35 @@
-import express from "express";
-import pino from "pino-http";
-import dotenv from "dotenv";
-import { env } from "./utils/env.js";
+import express from 'express';
+import pino from 'pino-http';
 
-const PORT = Number(env("PORT", "3000"));
+import dotenv from 'dotenv';
+import { getAllEvents } from './services/events.js';
 
-export const startServer = () => {
-  const app = express();
+dotenv.config();
+const PORT = Number(process.env.PORT);
 
-  app.use(express.json());
+const app = express();
 
+export function setupServer() {
   app.use(
     pino({
       transport: {
-        target: "pino-pretty",
+        target: 'pino-pretty',
       },
-    })
+    }),
   );
 
-  app.use("*", (req, res, next) => {
-    res.status(404).json({
-      message: "Not found",
-    });
+  app.get('/events', async (req, res) => {
+    const data = await getAllEvents();
+    res.json({ status: 200, message: 'Successfully found events!', data });
   });
 
-  app.use((err, req, res, next) => {
-    res.status(500).json({
-      message: "Something went wrong",
-      error: err.message,
+  app.use('*', (req, res, next) => {
+    res.status(404).json({
+      message: 'Not found',
     });
   });
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
-};
+}
