@@ -4,7 +4,10 @@ import cors from 'cors';
 
 import dotenv from 'dotenv';
 import { corsConfigs } from './config/corsConfigs.js';
-import { getContactController } from './controllers/events.js';
+import {
+  getEventsController,
+  getSomeEventsController,
+} from './controllers/events.js';
 import {
   createParticipantController,
   getParticipantController,
@@ -34,7 +37,9 @@ export function setupServer() {
     }),
   );
 
-  app.get('/events', ctrlWrapper(getContactController));
+  app.get('/events', ctrlWrapper(getEventsController));
+
+  app.get('/events/:somePage', ctrlWrapper(getSomeEventsController));
 
   app.get('/participant/:eventId', ctrlWrapper(getParticipantController));
 
