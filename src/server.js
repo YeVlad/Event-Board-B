@@ -23,8 +23,16 @@ app.use(
   }),
 );
 
+const corsOptions = {
+  origin: 'https://event-board-pink.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  exposedHeaders: ['Content-Range', 'X-Content-Range'],
+  optionsSuccessStatus: 200,
+};
+
 export function setupServer() {
-  app.use(cors(corsConfigs));
+  app.use(cors(corsOptions));
 
   app.use(
     pino({
