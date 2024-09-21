@@ -15,7 +15,7 @@ export const addNewEvents = async (req, res) => {
 
 export const getSomeEventsController = async (req, res) => {
   const { somePage } = req.params;
-  const { sortBy } = parseSortParams(req.body);
+  const { sortBy } = parseSortParams(req.query);
 
   const data = await getAllEventsSomePage(somePage, sortBy);
   res.json({ status: 200, message: 'Successfully found events!', data });
