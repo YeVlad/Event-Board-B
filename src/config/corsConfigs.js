@@ -4,6 +4,7 @@ export const corsConfigs = {
       'http://localhost:5173',
       'http://localhost:3000',
       'http://localhost:4173',
+      'https://event-board-pink.vercel.app/',
     ];
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
