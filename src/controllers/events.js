@@ -1,9 +1,4 @@
-import { getAllEvents, getAllEventsSomePage } from '../services/events.js';
-
-// export const getEventsController = async (req, res) => {
-//   const data = await getAllEvents();
-//   res.json({ status: 200, message: 'Successfully found events!', data });
-// };
+import { getAllEventsSomePage } from '../services/events.js';
 
 export const getSomeEventsController = async (req, res) => {
   const { somePage } = req.params;

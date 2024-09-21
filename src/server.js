@@ -4,10 +4,7 @@ import cors from 'cors';
 
 import dotenv from 'dotenv';
 import { corsConfigs } from './config/corsConfigs.js';
-import {
-  getEventsController,
-  getSomeEventsController,
-} from './controllers/events.js';
+import { getSomeEventsController } from './controllers/events.js';
 import {
   createParticipantController,
   getParticipantController,
@@ -36,8 +33,6 @@ export function setupServer() {
       },
     }),
   );
-
-  // app.get('/events', ctrlWrapper(getEventsController));
 
   app.get('/events/:somePage', ctrlWrapper(getSomeEventsController));
 
