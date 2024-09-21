@@ -6,6 +6,7 @@ export const corsConfigs = {
       'http://localhost:4173',
       'http://localhost:4163',
       'https://event-board-pink.vercel.app/',
+      'https://event-board-ten.vercel.app/',
       'https://event-board-o57x38tsw-vladyslavs-projects-3f31ee9c.vercel.app/',
     ];
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
