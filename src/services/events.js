@@ -5,8 +5,13 @@ export const addEvents = async (payload) => {
   return event;
 };
 
-export async function getAllEventsSomePage(somePage) {
-  return await Event.find()
+export async function getAllEventsSomePage(somePage, sortBy = 'title') {
+  const dataQuery = Event.find();
+
+  const final_data = await dataQuery
     .limit(5)
-    .skip((somePage - 1) * 5);
+    .skip((somePage - 1) * 5)
+    .sort({ [sortBy]: 'asc' });
+
+  return final_data;
 }
