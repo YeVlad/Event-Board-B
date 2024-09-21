@@ -24,7 +24,8 @@ app.use(
 );
 
 const corsOptions = {
-  origin: 'https://event-board-pink.vercel.app',
+  origin:
+    'https://event-board-o57x38tsw-vladyslavs-projects-3f31ee9c.vercel.app/',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   exposedHeaders: ['Content-Range', 'X-Content-Range'],
