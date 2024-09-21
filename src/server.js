@@ -33,7 +33,7 @@ const corsOptions = {
 };
 
 export function setupServer() {
-  app.use(cors(corsOptions));
+  app.use(cors(corsConfigs));
 
   app.use(
     pino({
